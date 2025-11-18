@@ -1,10 +1,11 @@
 "use client";
 
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import HotelBrandSection from "@/components/HotelBrandSection";
 
-export default function SearchPage() {
+function SearchPageContent() {
   const searchParams = useSearchParams();
   const city = searchParams.get("city") || "";
   const checkIn = searchParams.get("checkIn") || "";
@@ -163,6 +164,18 @@ export default function SearchPage() {
         />
       </div>
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen pt-20 bg-luxury-navy flex items-center justify-center">
+        <div className="text-luxury-cream text-lg">Loading...</div>
+      </div>
+    }>
+      <SearchPageContent />
+    </Suspense>
   );
 }
 

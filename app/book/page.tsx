@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 import emailjs from "@emailjs/browser";
 import HotelBackgroundAnimation from "@/components/HotelBackgroundAnimation";
 
-export default function BookPage() {
+function BookPageContent() {
   const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     customerName: "",
@@ -290,6 +290,18 @@ export default function BookPage() {
         </motion.div>
       </div>
     </div>
+  );
+}
+
+export default function BookPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen pt-20 bg-luxury-navy flex items-center justify-center">
+        <div className="text-luxury-cream text-lg">Loading...</div>
+      </div>
+    }>
+      <BookPageContent />
+    </Suspense>
   );
 }
 
