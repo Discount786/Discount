@@ -9,6 +9,13 @@
   NODE_VERSION = "18"
   NEXT_PUBLIC_BASE_URL = "https://discountdrhotels.com"
 
+# Redirect Netlify subdomain to custom domain
+[[redirects]]
+  from = "https://coruscating-crostata-a31f7a.netlify.app/*"
+  to = "https://discountdrhotels.com/:splat"
+  status = 301
+  force = true
+
 # Redirect www to non-www (adjust based on your preference)
 # Uncomment and modify if you want www to redirect to non-www
 # [[redirects]]
