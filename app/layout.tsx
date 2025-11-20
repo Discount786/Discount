@@ -21,12 +21,15 @@ export const metadata: Metadata = {
   description: "Experience the world's finest hotels for less. Members-only access to up to 50% off at Marriott, IHG, and Hilton properties worldwide.",
   metadataBase: new URL(baseUrl),
   alternates: {
-    canonical: '/',
+    canonical: baseUrl,
   },
   openGraph: {
     url: baseUrl,
     siteName: 'Discount DR',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
   },
 };
 

@@ -9,7 +9,17 @@
   NODE_VERSION = "18"
   NEXT_PUBLIC_BASE_URL = "https://discountdrhotels.com"
 
-# Note: Netlify automatically handles domain redirects when you set a custom domain as primary
-# Go to: Site settings > Domain management > Set primary domain
-# This will automatically redirect the Netlify subdomain to your custom domain
+# Redirect Netlify subdomain to custom domain (prevents Netlify URL from appearing)
+[[redirects]]
+  from = "https://coruscating-crostata-a31f7a.netlify.app/*"
+  to = "https://discountdrhotels.com/:splat"
+  status = 301
+  force = false
+
+# Also redirect http to https for custom domain
+[[redirects]]
+  from = "http://discountdrhotels.com/*"
+  to = "https://discountdrhotels.com/:splat"
+  status = 301
+  force = true
 
