@@ -7,4 +7,13 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  NEXT_PUBLIC_BASE_URL = "https://discountdrhotels.com"
+
+# Redirect www to non-www (adjust based on your preference)
+# Uncomment and modify if you want www to redirect to non-www
+# [[redirects]]
+#   from = "https://www.discountdrhotels.com/*"
+#   to = "https://discountdrhotels.com/:splat"
+#   status = 301
+#   force = true
 

@@ -14,9 +14,20 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://discountdrhotels.com';
+
 export const metadata: Metadata = {
   title: "Discount DR | Luxury Hotels - Exclusive Savings Up to 50% Off",
   description: "Experience the world's finest hotels for less. Members-only access to up to 50% off at Marriott, IHG, and Hilton properties worldwide.",
+  metadataBase: new URL(baseUrl),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    url: baseUrl,
+    siteName: 'Discount DR',
+    type: 'website',
+  },
 };
 
 export const viewport: Viewport = {
